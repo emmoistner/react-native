@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node_modules/react-native/packager/packager.sh",
+    "test": "jest"
   },
   "babel": {
     "retainLines": true,
@@ -31,10 +32,19 @@
   },
   "dependencies": {
     "debounce": "^1.0.0",
+    "keymirror": "^0.1.1",
     "react-native": "^0.12.0",
     "react-redux": "^3.1.0",
     "redux": "^3.0.2",
-    "redux-thunk": "^1.0.0",
-    "keymirror": "^0.1.1"
+    "redux-thunk": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^5.3.0",
+    "jest-cli": "^0.5.10"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [ "es6", "js" ],
+    "moduleFileExtensions": [ "js", "json", "es6" ]
   }
 }
