@@ -3,6 +3,7 @@ import Users from '../components/Users'
 import theme from '../utils/theme'
 import { UsersActions } from '../actions'
 import { connect } from 'react-redux/native'
+import { BBDListView } from '../components/listview'
 
 class UsersScreen extends Component {
 
@@ -25,10 +26,7 @@ class UsersScreen extends Component {
           <Text ref={'title'} style={theme.caption}>USERS</Text>
         </View>
         <View>
-          <Users
-            {...this.props}
-            data={users}
-          />
+          <BBDListView data={users} template='subtitle' />
         </View>
       </View>
     )
