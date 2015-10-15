@@ -1,0 +1,40 @@
+{
+  "name": "Core",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "babel": {
+    "retainLines": true,
+    "compact": true,
+    "comments": false,
+    "whitelist": [
+      "es6.arrowFunctions",
+      "es6.blockScoping",
+      "es6.classes",
+      "es6.constants",
+      "es6.destructuring",
+      "es6.forOf",
+      "es6.modules",
+      "es6.parameters",
+      "es6.properties.computed",
+      "es6.properties.shorthand",
+      "es6.spread",
+      "es6.templateLiterals",
+      "flow",
+      "react",
+      "react.displayName",
+      "regenerator"
+    ],
+    "sourceMaps": false
+  },
+  "dependencies": {
+    "debounce": "^1.0.0",
+    "react-native": "^0.12.0",
+    "react-redux": "^3.1.0",
+    "redux": "^3.0.2",
+    "redux-thunk": "^1.0.0",
+    "keymirror": "^0.1.1"
+  }
+}
