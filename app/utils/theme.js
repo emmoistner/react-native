@@ -4,7 +4,6 @@ const { StyleSheet } = React
 module.exports = StyleSheet.create({
   header: {
     backgroundColor: '#009bdf',
-    height: 65,
     justifyContent: 'space-between',
     flexDirection: 'row',
   },
@@ -21,9 +20,8 @@ module.exports = StyleSheet.create({
   },
   prevBtnContainer: {
     height: 36,
-    width: 36,
-    top: 26,
-    right: 10,
+    width: 50,
+    left: 10,
     justifyContent: 'center',
   },
 })

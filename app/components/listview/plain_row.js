@@ -5,7 +5,7 @@ class PlainRow extends Component {
 
   render() {
     return (
-      <TouchableOpacity style={styles.row}>
+      <TouchableOpacity style={styles.row} onPress={this.props.onPress}>
         <View style={styles.info}>
           <Text style={styles.title}>{this.props.name}</Text>
         </View>

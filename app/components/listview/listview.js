@@ -15,11 +15,13 @@ class BBDListView extends Component {
   static defaultProps = {
     data: [],
     template: 'list-44dp',
+    onItemPress: () => { console.log('Item pressed') },
   }
 
   static propTypes = {
     data: PropTypes.array.isRequired,
     template: PropTypes.string,
+    onItemPress: PropTypes.func,
   }
 
   constructor(props) {
@@ -38,13 +40,14 @@ class BBDListView extends Component {
   }
 
   renderRow(rowData) {
-    if (this.props.template == 'list-44dp') {
+    let { template, onItemPress } = this.props
+    if (template == 'list-44dp') {
       return (
-        <PlainRow {...rowData} />
+        <PlainRow {...rowData} onPress={() => onItemPress(rowData)} />
       )
     } else {
       return (
-        <SubtitleRow {...rowData} />
+        <SubtitleRow {...rowData} onPress={() => onItemPress(rowData)} />
       )
     }
   }
