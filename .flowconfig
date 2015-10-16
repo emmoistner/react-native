@@ -6,6 +6,7 @@
 
 # Some modules have their own node_modules with overlap
 .*/node_modules/node-haste/.*
+.*/node_modules/react-redux/node_modules/invariant.*
 
 # Ignore react-tools where there are overlaps, but don't ignore anything that
 # react-native relies on
@@ -48,4 +49,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(>=0\\.\\(1[0-6]\\|[0-9]\\).[0-9
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 
 [version]
-0.17.0
+0.16.0

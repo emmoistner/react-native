@@ -1,11 +1,16 @@
+/* @flow */
+
 import { actions } from '../constants'
 
-let initState = {
+const initState: {
+  isFetching: boolean,
+  items: Array<Object>,
+} = {
   isFetching: false,
   items: [],
 }
 
-function users(state = initState, action) {
+function users(state: Object = initState, action: Object): Object {
 
   switch(action.type) {
 
