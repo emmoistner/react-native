@@ -1,14 +1,11 @@
 import React, { Component, View, Text, TouchableOpacity, StyleSheet, InteractionManager } from 'react-native'
 import Users from '../components/Users'
-import theme from '../utils/theme'
 import { UsersActions } from '../actions'
 import { connect } from 'react-redux/native'
+import { BBDListView } from '../components/listview'
+import DetailsScreen from '../screens/details'
 
 class UsersScreen extends Component {
-
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount() {
     InteractionManager.runAfterInteractions(() => {
@@ -17,17 +14,24 @@ class UsersScreen extends Component {
     })
   }
 
+  navigate(data) {
+    const { navigator } = this.props
+    navigator.push({
+      component: DetailsScreen,
+      name: 'User Details',
+      data,
+    })
+  }
+
   render() {
     const users = this.props.state.users.items
     return (
       <View style={{ flex: 1 }}>
-        <View style={theme.header}>
-          <Text ref={'title'} style={theme.caption}>USERS</Text>
-        </View>
         <View>
-          <Users
-            {...this.props}
+          <BBDListView
             data={users}
+            onItemPress={this.navigate.bind(this)}
+            template='subtitle'
           />
         </View>
       </View>
