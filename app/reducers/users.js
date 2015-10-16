@@ -1,9 +1,12 @@
 import { actions } from '../constants'
 
-function users(state = {
+let initState = {
   isFetching: false,
   items: [],
-}, action) {
+}
+
+function users(state = initState, action) {
+
   switch(action.type) {
 
     case actions.REQUEST_USERS: {
