@@ -12,18 +12,6 @@ function makeDataSource(data) {
 
 class BBDListView extends Component {
 
-  static defaultProps = {
-    data: [],
-    template: 'list-44dp',
-    onItemPress: () => { console.log('Item pressed') },
-  }
-
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-    template: PropTypes.string,
-    onItemPress: PropTypes.func,
-  }
-
   constructor(props) {
     super(props)
     this.state = {
@@ -47,7 +35,7 @@ class BBDListView extends Component {
       )
     } else {
       return (
-        <SubtitleRow {...rowData} onPress={() => onItemPress(rowData)} />
+        <SubtitleRow {...rowData} onPress={() => onItemPress(rowData) } />
       )
     }
   }
@@ -64,5 +52,17 @@ class BBDListView extends Component {
   }
 
 }
+
+BBDListView.defaultProps = {
+    data: [],
+    template: 'list-44dp',
+    onItemPress: () => { }
+  }
+
+BBDListView.propTypes = {
+    data: PropTypes.array.isRequired,
+    template: PropTypes.string,
+    onItemPress: PropTypes.func
+  }
 
 export default BBDListView
